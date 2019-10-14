@@ -11,9 +11,9 @@ func Oneline(multilineJson string) string {
 }
 
 func PrettyJson(str string) string {
-	json, err := json.MarshalIndent([]byte(str), "", "  ")
+	json, err := json.MarshalIndent(str, "", "  ")
 	if err != nil {
 		return "format error"
 	}
-	return fmt.Sprintf(json)
+	return fmt.Sprintf("%v", string(json))
 }
