@@ -28,5 +28,6 @@ func UglyJson(str string) string {
 	if err != nil {
 		return "format error"
 	}
-	return fmt.Sprintf("%v", string(json))
+	s := fmt.Sprintf("%v", string(json))
+	return Oneline(s)
 }
