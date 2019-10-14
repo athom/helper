@@ -11,7 +11,12 @@ func Oneline(multilineJson string) string {
 }
 
 func PrettyJson(str string) string {
-	json, err := json.MarshalIndent(str, "", "  ")
+	var data map[string]interface{}
+	if err := json.Unmarshal([]byte(str), &data); err != nil {
+		panic(err)
+	}
+
+	json, err := json.MarshalIndent(data, "", "  ")
 	if err != nil {
 		return "format error"
 	}
