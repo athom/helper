@@ -3,7 +3,6 @@ package helper
 import (
 	"encoding/json"
 	"fmt"
-	"strings"
 )
 
 func PrettyJson(str string) string {
